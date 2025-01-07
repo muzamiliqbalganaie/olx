@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# OLX - Buy and Sell Online
+
+This is an OLX app for buying and selling goods and services, built with [Next.js](https://nextjs.org).
 
 ## Getting Started
 
