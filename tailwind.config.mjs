@@ -1,17 +1,34 @@
+import { URL } from 'next/dist/compiled/@edge-runtime/primitives/url';
+
 /** @type {import('tailwindcss').Config} */
-export default {
+const config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    // Or if using `src` directory:
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      textColor: {
+        color1: '#006C54',
       },
+      textColor: {
+        color2: '#000000',
+      },
+      borderB: {
+        color3: '#D6D6D6',
+      },
+      bgButton: {
+        color4: '#F1F2F6'
+      }
     },
   },
+  // images: {
+  //   dangerouslyAllowSVG: true,
+  //   contentDispositionType: 'attachment',
+  //   contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  // },
   plugins: [],
-};
+}
+
+export default config;
