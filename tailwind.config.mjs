@@ -10,7 +10,16 @@ const config = {
   theme: {
     extend: {
       textColor: {
-        custom1: '#000000',
+        color1: '#006C54',
+      },
+      textColor: {
+        color2: '#000000',
+      },
+      borderB: {
+        color3: '#D6D6D6',
+      },
+      bgButton: {
+        color4: '#F1F2F6'
       }
     },
   },

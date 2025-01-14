@@ -1,14 +1,20 @@
 'use client';
-import Navbar from '@/app/ui/firstpage/navbar';
 import './globals.css';
 import FreshRecomands from './ui/firstpage/freshrecomdations';
 import SubNav from './ui/firstpage/subnav';
+import AddBanner from './ui/firstpage/addpbanner';
+import Navbar from './ui/firstpage/navbar';
+import Footer from './ui/firstpage/footer';
+
 export default function Home() {
 
   return (
-    <div className='flex flex-col justify-center items-center gap-4'>
+    <div className=''>
+      <Navbar />
       <SubNav />
       <FreshRecomands />
+      <AddBanner />
+      <Footer />
     </div>
   );
 }

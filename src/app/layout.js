@@ -1,6 +1,7 @@
 import { Roboto } from "next/font/google";
 import Navbar from "@/app/ui/firstpage/navbar";
 import "./globals.css";
+import Footer from "./ui/firstpage/footer";
 
 
 const roboto = Roboto({
@@ -20,8 +21,9 @@ export default function RootLayout({ children }) {
       <body
         className={roboto.variable}
       >
-        <Navbar />
+
         {children}
+
       </body>
     </html >
   );

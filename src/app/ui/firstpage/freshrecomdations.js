@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 
-import ProductCard from './card';
+import FeaturedProductCard from './card';
 
 const FreshRecomands = () => {
     const [carddata, setCardData] = useState([
@@ -68,15 +68,15 @@ const FreshRecomands = () => {
     return (
         <section className="flex flex-col w-full  ">
             <p className="text-left text-[40px] font-[400] px-[3rem] pt-10 pb-6">Fresh Recommendations</p>
-            <div className='max-w-full h-screen grid grid-cols-3 gap-16'>
+            <div className='max-w-full grid grid-cols-3 gap-16'>
                 {
                     carddata.map((card) => (
                         <div key={card.id} className="flex justify-center flex-row items-center ">
-                            <ProductCard
+                            <FeaturedProductCard
                                 id={card.id}
                                 title={card.title}
                                 description={card.description}
-                                picture={card.picture === null ? '/chair.jpg' : card.picture}
+                                picture={card.picture === null ? '/chair.svg' : card.picture}
                                 price={card.price}
                                 location={card.location}
                                 date={card.date}

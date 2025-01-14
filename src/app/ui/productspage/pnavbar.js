@@ -3,14 +3,14 @@ import Image from 'next/image';
 import { useState } from 'react';
 import logo from '/public/Logo.svg';
 import '../../globals.css';
-import SubNav from './subnav';
 
-const Navbar = () => {
+
+const ProductNavbar = () => {
     const [exploreOpen, setExploreOpen] = useState(false);
     const [dealsOpen, setDealsOpen] = useState(false);
     return (
-        <header className='fixed top-0 left-0 right-0  z-50'>
-            <nav className=" p-4  max-w-full">
+        <header className='sticky top-0 left-0 right-0 background-container '>
+            <nav className="p-4  max-w-full">
                 <div className="container mx-auto flex justify-between  items-center max-w-[1680px]">
                     <div className="text-green-900 font-bold text-2xl">
                         <Image src={logo} alt="header logo" width={123} height={63} />
@@ -19,7 +19,7 @@ const Navbar = () => {
                         <div className="relative inline-block">
                             <div className='flex justify-evenly  items-center gap-1 whitespace-nowrap'
                                 onMouseEnter={() => setExploreOpen(!exploreOpen)}
-                                onMouseOut={() => setExploreOpen(exploreOpen)}
+                                onMouseLeave={() => setExploreOpen(!exploreOpen)}
                             >
                                 <button
                                     className="text-custom1 select-none min-w-[80px] px-3 py-2 text-[24px] font-normal leading-[28.13px] text-left  underline-offset-auto"
@@ -45,7 +45,7 @@ const Navbar = () => {
                         <div className="relative inline-block">
                             <div className=' inline-flex items-center gap-1 whitespace-nowrap'
                                 onMouseEnter={() => setDealsOpen(!dealsOpen)}
-                                onMouseLeave={() => setDealsOpen(dealsOpen)}
+                                onMouseLeave={() => setDealsOpen(!dealsOpen)}
                             >
                                 <button
                                     className="text-custom1  select-none min-w-[80px]  px-3 py-2 text-[24px] font-normal leading-[28.13px] text-left  underline-offset-auto"
@@ -73,10 +73,16 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
+            <section className=' w-full '>
+                <div className=' w-full  justify-center flex-col items-center bg-blackOverlay  mx-auto py-10  justify-items-center'>
+                    <p className='text-5xl text-[800] w-[762px] justify-center mt-20 text-center' >Sell Your Home & Unused Products Effortlessly on OLX</p>
+                    <p className='text-2xl w-[470px] text-center my-10'>Declutter Your Space and Earn Extra Income by Selling Unused Items on OLX.</p>
+                </div>
+            </section>
         </header>
 
 
     );
 };
 
-export default Navbar;
+export default ProductNavbar;

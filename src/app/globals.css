@@ -22,14 +22,51 @@
 
 .background-container::before {
   content: "";
-  background-image: url("/bg-head.jpg"); /* Correct path without /public prefix */
+  background-image: url("/bg-head.svg"); /* Correct path without /public prefix */
   background-size: cover;
   background-position: center;
-  opacity: 0.24; /* Set opacity to 24% */
+  /* opacity: 0.24; Set opacity to 24% */
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -1; /* Ensure the background is behind the content */
+}
+
+.navbar {
+  transition: transform 0.5s ease-in-out;
+}
+
+.navbar-hidden {
+  transform: translateY(-100%);
+}
+.glow {
+  filter: drop-shadow(0 0 200px rgb(0, 204, 128));
+}
+.placeholder-black::placeholder {
+  /* Standard */
+  color: #000000;
+}
+.no-spinner::-webkit-inner-spin-button,
+.no-spinner::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.custom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50; /* Change this to your desired color */
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.custom-slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50; /* Change this to your desired color */
+  cursor: pointer;
+  border-radius: 50%;
 }
