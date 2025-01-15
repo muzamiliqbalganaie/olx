@@ -15,7 +15,7 @@
 }
 .background-container {
   position: relative;
-  width: 100%;
+  max-width: 100%;
   height: 100%;
   overflow: hidden;
 }
@@ -70,3 +70,8 @@
   cursor: pointer;
   border-radius: 50%;
 }
+/* <link rel="icon" href="/favicon.ico" type="image/x-icon"> */
+
+/* <FilesMatch "favicon.ico"> */
+    /* Header set Cache-Control "max-age=31536000, public" */
+/* </FilesMatch> */

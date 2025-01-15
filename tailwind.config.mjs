@@ -4,31 +4,26 @@ import { URL } from 'next/dist/compiled/@edge-runtime/primitives/url';
 const config = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
-    // Or if using `src` directory:
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       textColor: {
         color1: '#006C54',
-      },
-      textColor: {
         color2: '#000000',
       },
-      borderB: {
+      borderColor: {
         color3: '#D6D6D6',
       },
-      bgButton: {
-        color4: '#F1F2F6'
-      }
+      backgroundColor: {
+        color4: '#F1F2F6',
+      },
+      dropShadow: {
+        'glow': '0 0 200px rgb(0, 204, 128)',
+      },
     },
   },
-  // images: {
-  //   dangerouslyAllowSVG: true,
-  //   contentDispositionType: 'attachment',
-  //   contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-  // },
   plugins: [],
-}
+};
 
 export default config;

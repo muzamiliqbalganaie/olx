@@ -9,12 +9,12 @@ import Footer from './ui/firstpage/footer';
 export default function Home() {
 
   return (
-    <div className=''>
+    <>
       <Navbar />
       <SubNav />
       <FreshRecomands />
       <AddBanner />
       <Footer />
-    </div>
+    </>
   );
 }

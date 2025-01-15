@@ -3,7 +3,7 @@ import React from 'react'
 
 const FatFooter = () => {
     return (
-        <div className='flex flex-row container justify-center py-4 gap-20 mx-10 '>
+        <div className='max-w-full flex flex-row container justify-center py-4 gap-20 mx-auto '>
             <div className="basis-1/6">
                 <p className='mb-4 text-base font-[800]'>POPULAR LOCATIONS</p>
                 <div className='grid grid-flow-row text-normal font-[400] gap-4'>
@@ -40,7 +40,7 @@ const FatFooter = () => {
             </div>
             <div className="basis-1/6 ">
                 <p className='mb-4 text-base font-[800]'>FOLLOW US</p>
-                <div className='grid grid-flow-row gap-4'>
+                <div className='grid grid-flow-row gap-4 '>
                     <div className='flex flex-row gap-8 '>
                         <span className='facebook'><svg width="13" height="21" viewBox="0 0 13 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M11 2.5H9C6.5 2.5 5 4 5 6.5V18.5" stroke="black" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
@@ -65,7 +65,7 @@ const FatFooter = () => {
                         </svg>
                         </span>
                     </div>
-                    <div className='flex flex-row gap-3 my-10'>
+                    <div className='flex flex-row flex-grow  gap-3  my-10 sm:w-16 md:w-32 lg:w-40 md:flex-col'>
                         <Image src='/playstore.svg' alt=' android_play_store ' width={162} height={56} />
                         <Image src='/applestore.svg' alt='apple_store' width={162} height={56} />
                     </div>
@@ -75,4 +75,4 @@ const FatFooter = () => {
     )
 }
 
-export default FatFooter
+export default FatFooter;

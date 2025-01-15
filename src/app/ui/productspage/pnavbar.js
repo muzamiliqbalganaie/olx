@@ -74,9 +74,13 @@ const ProductNavbar = () => {
                 </div>
             </nav>
             <section className=' w-full '>
-                <div className=' w-full  justify-center flex-col items-center bg-blackOverlay  mx-auto py-10  justify-items-center'>
-                    <p className='text-5xl text-[800] w-[762px] justify-center mt-20 text-center' >Sell Your Home & Unused Products Effortlessly on OLX</p>
-                    <p className='text-2xl w-[470px] text-center my-10'>Declutter Your Space and Earn Extra Income by Selling Unused Items on OLX.</p>
+                <div className='w-full flex flex-col items-center bg-blackOverlay mx-auto py-10'>
+                    <p className='text-3xl md:text-5xl font-extrabold w-full md:w-[762px] text-center mt-10 md:mt-20'>
+                        Sell Your Home & Unused Products Effortlessly on OLX
+                    </p>
+                    <p className='text-lg md:text-2xl w-full md:w-[470px] text-center my-5 md:my-10'>
+                        Declutter Your Space and Earn Extra Income by Selling Unused Items on OLX.
+                    </p>
                 </div>
             </section>
         </header>

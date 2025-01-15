@@ -66,7 +66,7 @@ const FreshRecomands = () => {
         }
     ]);
     return (
-        <section className="flex flex-col w-full  ">
+        <section className="flex flex-col max-w-full  ">
             <p className="text-left text-[40px] font-[400] px-[3rem] pt-10 pb-6">Fresh Recommendations</p>
             <div className='max-w-full grid grid-cols-3 gap-16'>
                 {

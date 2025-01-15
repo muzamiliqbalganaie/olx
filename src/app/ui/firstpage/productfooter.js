@@ -4,7 +4,7 @@ import React from 'react'
 
 const ProductFooter = () => {
     return (
-        <div className='grid grid-rows-2 justify-evenly  w-full min-h[381px] bg-[#002118] text-white  '>
+        <div className='grid grid-rows-2 justify-evenly max-w-full min-h[381px] bg-[#002118] text-white  '>
             <div className='w-full grid grid-cols-6 gap-[9rem]  pt-12 items-end '>
                 <Image src='/productfooter/c1.svg' alt='product_company' width={152} height={85} ></Image>
                 <Image src='/productfooter/c2.svg' alt='product_company' width={152} height={85} ></Image>

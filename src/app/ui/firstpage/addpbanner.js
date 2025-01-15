@@ -7,7 +7,7 @@ import AddButton from './addbutton';
 const AddBanner = () => {
     return (
         <section className="w-full ">
-            <div className='basis-5/12 max-w-[full]  flex flex-row overflow-hidden justify-center gap-10 bg-[#002118] rounded-2xl mx-10 my-20 '>
+            <div className='basis-5/12 max-w-full  flex flex-row overflow-hidden justify-center gap-10 bg-[#002118] rounded-2xl mx-10 my-20 '>
                 <div className='glow'>
                     <Image src={bannerImg} alt='add_post_banner_img' width={423} height={500}>
                     </Image>

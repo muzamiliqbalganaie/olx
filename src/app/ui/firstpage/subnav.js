@@ -7,8 +7,8 @@ import AddButton from './addbutton';
 const SubNav = () => {
     const [locOpen, setLocOpen] = useState(false);
     return (
-        <section className='background-container w-full h-screen'>
-            <div className=' w-full h-screen  justify-center flex-col items-center bg-blackOverlay  mx-auto py-10  justify-items-center'>
+        <section className='background-container max-w-full h-screen'>
+            <div className=' max-w-full h-screen  justify-center flex-col items-center bg-blackOverlay  mx-auto py-10  justify-items-center'>
                 <p className='text-5xl text-[800] w-[762px] justify-center mt-20 text-center' >Sell Your Home & Unused Products Effortlessly on OLX</p>
                 <p className='text-2xl w-[470px] text-center my-10'>Declutter Your Space and Earn Extra Income by Selling Unused Items on OLX.</p>
                 <AddButton />
