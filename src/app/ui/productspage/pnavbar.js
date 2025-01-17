@@ -9,8 +9,8 @@ const ProductNavbar = () => {
     const [exploreOpen, setExploreOpen] = useState(false);
     const [dealsOpen, setDealsOpen] = useState(false);
     return (
-        <header className='sticky top-0 left-0 right-0 background-container '>
-            <nav className="p-4  max-w-full">
+        <header className='fixed top-0 left-0 right-0 z-50  '>
+            <nav className="p-4  max-w-full bg-white">
                 <div className="container mx-auto flex justify-between  items-center max-w-[1680px]">
                     <div className="text-green-900 font-bold text-2xl">
                         <Image src={logo} alt="header logo" width={123} height={63} />
@@ -35,9 +35,9 @@ const ProductNavbar = () => {
                                 >
                                     <div className="py-1"
                                     >
-                                        <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">muzamil</a>
-                                        <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">tawseef</a>
-                                        <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">aabrar</a>
+                                        <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">houses</a>
+                                        <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">cars</a>
+                                        <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">electric applicances</a>
                                     </div>
                                 </div>
                             )}
@@ -73,7 +73,7 @@ const ProductNavbar = () => {
                     </div>
                 </div>
             </nav>
-            <section className=' w-full '>
+            <section className=' w-full background-container max-w-full h-fit-content'>
                 <div className='w-full flex flex-col items-center bg-blackOverlay mx-auto py-10'>
                     <p className='text-3xl md:text-5xl font-extrabold w-full md:w-[762px] text-center mt-10 md:mt-20'>
                         Sell Your Home & Unused Products Effortlessly on OLX

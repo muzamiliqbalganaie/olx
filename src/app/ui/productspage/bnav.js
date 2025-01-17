@@ -11,7 +11,7 @@ const BodyNav = () => {
                 <span className=' w-[62px] text-[16px] font-[400] text-color2'>Advance Filters</span>
             </div>
             <div>
-                <Search width='437px' height='87' />
+                <Search width='937px' height='auto' />
             </div>
             {/*ads View*/}
             <div className='flex flex-row items-center justify-center md:justify-start md:pl-4 md:py-2 gap-2'>

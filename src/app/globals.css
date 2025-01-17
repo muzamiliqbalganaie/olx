@@ -9,9 +9,15 @@
 .bg-blackOverlay {
   background-image: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.2) 100%
+   rgba(255, 255, 255, 1)0%
+    rgba(0, 108, 84, 1) 50%,
+    
   );
+  background: linear-gradient(360deg, #006C54 0%, #FFFFFF 100%);
+
+ 
+
+
 }
 .background-container {
   position: relative;
@@ -31,7 +37,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Ensure the background is behind the content */
+  z-index: -1; 
 }
 
 .navbar {
@@ -75,3 +81,43 @@
 /* <FilesMatch "favicon.ico"> */
     /* Header set Cache-Control "max-age=31536000, public" */
 /* </FilesMatch> */
+
+
+.custom-checkbox {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 0.5px solid black;
+  background-color: white;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.custom-checkbox:checked {
+  background-color: #4CAF50;
+  scale: 1.2;
+}
+
+/* custome scroll bar */
+/* Custom scrollbar styles */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px; /* Very thin width */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #000; /* Black color for the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #D6D6D6; /* Light gray color for the scrollbar track */
+}
+
+
+/* Remove scrollbar arrows */
+.custom-scrollbar::-webkit-scrollbar-button {
+  display: none; /* Hide the arrows */
+}

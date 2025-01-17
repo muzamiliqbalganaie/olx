@@ -1,10 +1,14 @@
 'use client';
 import Image from 'next/image';
-import { React, useState } from 'react';
+import { React, useEffect, useState } from 'react';
+import '../../../globals.css'
 
-const CategoryItem = ({ name, subcategories, isCatOpen, isSubCatOpen, onMouseEnter, onMouseLeave, onSubCatSel }) => {
+const CategoryItem = ({ name, subcategories, isCatOpen, onMouseEnter, onMouseLeave, onSubCatSel }) => {
     const [openSubcategories, setOpenSubcategories] = useState(Array(subcategories.length).fill(false));
-
+    console.log('Subcategories:', subcategories);
+    useEffect(() => {
+        console.log('iscatopen:', isCatOpen);
+    }, [isCatOpen]);
     const handleSubcategoryMouseEnter = (index) => {
         const newOpenSubcategories = openSubcategories.map((isCatOpen, i) => i === index);
         setOpenSubcategories(newOpenSubcategories);
@@ -13,6 +17,17 @@ const CategoryItem = ({ name, subcategories, isCatOpen, isSubCatOpen, onMouseEnt
     const handleSubcategoryMouseLeave = () => {
         setOpenSubcategories(Array(subcategories.length).fill(false));
     };
+
+    const handleSubCategory = async (brand) => {
+        setSelectedSubcategory();
+        try {
+            // const response = await axios.post('http://localhost:3000/api/brand', brand);
+            // console.log(response.data);
+            console.log('Brand posted:', brand);
+        } catch (error) {
+            console.error('Error in posting brand:', error);
+        }
+    }
 
     return (
         <div className={`relative inline-block gap-3 ${isCatOpen ? 'h-auto' : 'h-12'}`}
@@ -42,45 +57,45 @@ const CategoryItem = ({ name, subcategories, isCatOpen, isSubCatOpen, onMouseEnt
                 </button>
             </div>
             {isCatOpen && (
-                <div className={`${isCatOpen ? 'max-h-60 overflow-y-scroll' : 'h-auto'}`}>
+                <div className={`${isCatOpen ? 'max-h-full ' : 'h-auto'}`}>
                     {subcategories.map((sub, index) => (
-                        <div key={sub.id} className={`relative ${isCatOpen ? 'max-h-60 overflow-y-scroll' : 'h-auto'}`}>
+                        <div key={index} className={`relative ${isCatOpen ? 'max-h-full  ' : 'h-auto'}`}>
                             <a
                                 href="#"
-                                className="block px-4 py-2 text-[16px] text-color2 font-[400] hover:bg-gray-100"
-
+                                className="block px-4 py-2 text-[20px] text-color2 font-[400] "
+                                onMouseEnter={() => handleSubcategoryMouseEnter(index)}
+                                onMouseLeave={handleSubcategoryMouseLeave}
                                 onClick={() => onSubCatSel(sub)}
                             >
                                 {sub.name}
-                                <span className='ml-2 text-[16px] font-[300] text-color2'>
+                                <span className='ml-2 text-[20px] font-[300] text-color2'>
                                     ({sub.count})
                                 </span>
                             </a>
-                            {isSubCatOpen && (
-                                <div key={index} className={`${isCatOpen ? 'max-h-60 overflow-y-scroll' : 'h-auto'}`}>
-                                    {sub.brands.map((brand, brandIndex) => (
-                                        <label key={sub.brands.id} className="flex items-center gap-2">
-                                            <a
-                                                key={sub.brands.id}
-                                                href="#"
-                                                className="block px-4 py-2 text-[16px] text-color2 font-[400] hover:bg-gray-100"
-                                                onMouseEnter={() => handleSubcategoryMouseEnter(brandIndex)}
-                                                onMouseLeave={handleSubcategoryMouseLeave}
-                                                onClick={() => onSubCatSel(brand)}
-                                            >
-                                                {brand}
-                                                {console.log('Selected brand:', brand.id)}
-                                            </a>
-                                        </label>
-                                    ))}
-                                </div>
+                            <div className={`${isCatOpen ? 'max-h-12' : 'h-auto'} flex flex-col gap-2 pl-4 overflow-y-auto custom-scrollbar `}>
+                                {sub.brands.map((brand, brandIndex) => (
+                                    <label key={`brand-${brand.id}-${brandIndex}`} className="flex items-center gap-[1px] ">
+                                        <input type="checkbox" className="custom-checkbox" />
+                                        <a
+                                            href="#"
+                                            className="block  text-[14px] text-color2 font-[400]"
+                                            onClick={() => handleSubCategory(brand)}
+                                        >
+                                            {brand.name}
+                                            <span className=' text-[14px] font-[300] text-color2'>
+                                                ({brand.count})
+                                            </span>
+                                        </a>
+                                    </label>
+                                ))}
+                            </div>
 
-                            )}
                         </div>
                     ))}
                 </div>
-            )}
-        </div>
+            )
+            }
+        </div >
     );
 };
 

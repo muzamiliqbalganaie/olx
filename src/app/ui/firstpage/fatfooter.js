@@ -3,7 +3,7 @@ import React from 'react'
 
 const FatFooter = () => {
     return (
-        <div className='max-w-full flex flex-row container justify-center py-4 gap-20 mx-auto '>
+        <div className='max-w-full flex flex-row container justify-center py-4 px-8 mx-auto '>
             <div className="basis-1/6">
                 <p className='mb-4 text-base font-[800]'>POPULAR LOCATIONS</p>
                 <div className='grid grid-flow-row text-normal font-[400] gap-4'>

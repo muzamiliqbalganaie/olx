@@ -9,8 +9,8 @@ const Navbar = () => {
     const [exploreOpen, setExploreOpen] = useState(false);
     const [dealsOpen, setDealsOpen] = useState(false);
     return (
-        <header className='fixed top-0 left-0 right-0  z-50'>
-            <nav className=" p-4  max-w-full">
+        <header className=' fixed top-0 left-0 right-0  z-50 '>
+            <nav className=" p-4  max-w-full bg-white ">
                 <div className="container mx-auto flex justify-between  items-center max-w-[1680px]">
                     <div className="text-green-900 font-bold text-2xl">
                         <Image src={logo} alt="header logo" width={123} height={63} />
@@ -35,9 +35,9 @@ const Navbar = () => {
                                 >
                                     <div className="py-1"
                                     >
-                                        <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">muzamil</a>
-                                        <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">tawseef</a>
-                                        <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">aabrar</a>
+                                        <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">ghi</a>
+                                        <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">def</a>
+                                        <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">abc</a>
                                     </div>
                                 </div>
                             )}

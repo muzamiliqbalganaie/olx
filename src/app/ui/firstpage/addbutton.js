@@ -1,9 +1,15 @@
-import React from 'react'
+import Image from 'next/image';
+import React from 'react';
+import buttonlogo from '../../../../public/ei_plus.svg';
 
 const AddButton = () => {
     return (
-        <button className="max-w-[224px] h-[73px] items-center  px-4 py-2 bg-[#006C54] text-[#FFFFFF]  rounded-full font-[400] text-[24px]">+ Post Ads Now</button>
+        <button className="flex items-center px-4 py-2 bg-color1 text-white rounded-[15px]  font-[400] text-[24px]">
+            <Image src={buttonlogo} alt="button logo" width={25} height={25} />
+            Post Ads Now
+        </button>
+
     )
 }
 
-export default AddButton
+export default AddButton;

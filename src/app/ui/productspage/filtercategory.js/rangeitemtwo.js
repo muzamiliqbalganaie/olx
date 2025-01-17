@@ -30,7 +30,7 @@ const DropdownInput = ({ label, options, value, onChange }) => {
                         </option>
                     ))}
                 </select>
-                <Image className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none transition-transform duration-200 ease-in-out" src="/productspage/select.png" style={{ transform: isFocused ? 'translateY(-50%) rotate(180deg)' : 'translateY(-50%)' }} alt="select" width={16} height={16} />
+                <Image className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none transition-transform duration-200 ease-in-out" src="productspage/Arrow.svg" style={{ transform: isFocused ? 'translateY(-50%) rotate(180deg)' : 'translateY(-50%)' }} alt="select" width={16} height={16} />
             </div>
         </div>
     );
