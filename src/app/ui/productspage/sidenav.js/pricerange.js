@@ -1,20 +1,50 @@
 'use client'
-import { React, useState } from 'react';
+import { React, useState, useCallback, useEffect } from 'react';
 import '../../../globals.css'
+import axios from 'axios';
+import { fetchProducts } from '../../../../../modules/products';
 
-const AdsPostedTime = ({ onFilterChange }) => {
-    const [selectedTime, setSelectedTime] = useState('');
+const PriceRange = ({ onFilterChange }) => {
     const [rangeValue, setRangeValue] = useState(1);
 
-    const handleFilterChange = (event) => {
+    const handkeRangeChange = (event) => {
         const value = event.target.value;
-        setSelectedTime(value);
-        onFilterChange(value);
-    };
+        setRangeValue(value);
+        debounceFetchData(value);
+    }
 
-    const handleRangeChange = (event) => {
-        setRangeValue(event.target.value);
+    // Function to fetch data based on the price range using the module
+    const fetchData = async (value) => {
+        try {
+            const data = await fetchProducts(value);
+            onFilterChange(data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
     };
+    // Debounce function to limot the rate of api calls
+    const debounce = (func, wait) => {
+        let timeout;
+        return function (...args) {
+            const context = this;
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(context, args), wait);
+        };
+    };
+    //Memoized version of debounce fetchData
+    const debounceFetchData = useCallback(debounce(fetchData, 300), []);
+
+    //handle range change
+    const handleRangeChange = (event) => {
+        const value = event.target.value;
+        setRangeValue(value);
+        debounceFetchData(value);
+    }
+
+    //fetch data intiallly when the component is mounted
+    useEffect(() => {
+        fetchData(rangeValue);
+    }, []);
 
     return (
         <div className='w-full flex flex-col gap-2 border-[0.5px] border-[#D6D6D6DD] py-1'>
@@ -41,4 +71,4 @@ const AdsPostedTime = ({ onFilterChange }) => {
     );
 };
 
-export default AdsPostedTime;
+export default PriceRange;

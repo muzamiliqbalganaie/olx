@@ -1,7 +1,9 @@
+'use client';
 import Image from 'next/image';
 import React, { useState } from 'react';
+import '../../globals.css';
 
-const Search = ({ width }) => {
+const Search = ({ width, height }) => {
     const [locOpen, setLocOpen] = useState(false);
     const [location, setLocation] = useState('Srinagar');
 
@@ -10,15 +12,16 @@ const Search = ({ width }) => {
         setLocOpen(false);
     };
 
+
     return (
-        <div className="relative py-10 w-[813px]" >
+        <div className="relative py-10 min-w-[813px] " >
             <div className="flex items-center border border-[#006C54] rounded-full bg-white w-full">
-                <div className="relative flex items-center w-full">
-                    <svg className="absolute left-4 top-1/2 transform -translate-y-1/2" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div className="relative flex items-center w-full py-4">
+                    <svg className="absolute left-4 top-1/2 transform -translate-y-1/2 pt-2" width="53" height="53" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10 20C14.4183 20 18 16.4183 18 12C18 7.58172 14.4183 4 10 4C5.58172 4 2 7.58172 2 12C2 16.4183 5.58172 20 10 20Z" stroke="#6D6D6D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         <path d="M22 22L18 18" stroke="#6D6D6D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                    <input type="search" placeholder="Search To Buy..." className="w-full h-[50px] pl-[3rem] pr-4 py-2 bg-transparent border-none rounded-l-full focus:outline-none" />
+                    <input type="search" placeholder="Search To Buy..." className="u-search w-full text-[24px] font-[400] pl-[4.5rem] pr-4  bg-transparent border-none rounded-l-full focus:outline-none appearance-none" />
                     <div className="absolute right-3 align-middle border-[1px] border-[rgba(0, 0, 0, 0.2)] px-4 rounded-[10px] ">
                         <div className='flex justify-evenly  items-center gap-1 whitespace-nowrap right-3'>
                             <svg width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg">

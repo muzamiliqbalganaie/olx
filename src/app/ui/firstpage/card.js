@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
 
@@ -9,9 +10,9 @@ const FeaturedProductCard = ({ id, title, description, picture, location, date, 
     };
 
     return (
-        <div className=" relative max-w-sm rounded min-w-[433px] min-h-[413px] overflow-hidden shadow-lg border border-[#006C54] gap-6">
+        <div className=" relative max-w-sm rounded min-w-[433px] min-h-[413px] overflow-hidden shadow-lg border-[0.5px] border-color4 gap-6 sm:min-w-[300px] md:min-w-[350px] lg:min-w-[433px] sm:min-h-[350px] md:min-h-[380px] lg:min-h-[413px]">
             <Image
-                className="w-full"
+                className="max-w-full object-fit max-h-[250px]"
                 src={picture}
                 alt={title}
                 width={433}

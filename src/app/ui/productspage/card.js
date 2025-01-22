@@ -1,31 +1,32 @@
 'use client';
-import Image from 'next/image'
-import { React, useState } from 'react'
+import Image from 'next/image';
+import { useState } from 'react';
 
 const ProductCards = ({ product }) => {
     const [isWishlisted, setIsWishlisted] = useState(false);
 
     const toggleWishlist = () => {
-        setIsWishlisted(!isWishlisted)
-    }
+        setIsWishlisted(!isWishlisted);
+    };
+
     return (
-        <div className=' max-w-[308px] flex flex-col justify-start items-start rounded-lg border border-[#D6D6D6] mx-2 my-2 '>
-            <Image src='/productfooter/unsplash_d4w4V32pg7k.png' alt='product_img' width={308} height={250} className='rounded-t-md'></Image>
+        <div className='max-w-sm sm:max-w-xs md:max-w-md lg:max-w-lg flex flex-col justify-start items-start rounded-lg border border-[#D6D6D6] mx-2 my-2'>
+            <Image src='/productfooter/unsplash_d4w4V32pg7k.png' alt='product_img' width={308} height={250} className='rounded-t-md w-full object-cover' />
             <p className='w-full text-[24px] font-[400] border-b-[1px] border-[#D6D6D6] px-2'>House</p>
-            <div className='w-full border-b-[1px] border-[#D6D6D6] flex flex-col justify-start  gap-[1px] px-2'>
-                <p className=' text-[20px] font-[600] '>Luxury Family House</p>
-                <p className=' text-[16px] font-[400] '>Duplex House</p>
-                <div>
-                    <span src='/public/productfooter/location.svg' />
-                    <p className=' text-[16px] font-[400] '>Dakha Bangladesh</p>
+            <div className='w-full border-b-[1px] border-[#D6D6D6] flex flex-col justify-start gap-[1px] px-2'>
+                <p className='text-[20px] font-[600]'>Luxury Family House</p>
+                <p className='text-[16px] font-[400]'>Duplex House</p>
+                <div className='flex items-center'>
+                    <Image src='/productfooter/location.svg' alt='location_icon' width={16} height={16} />
+                    <p className='text-[16px] font-[400] ml-1'>Dakha Bangladesh</p>
                 </div>
             </div>
-            <div className='w-full border-b-[1px] border-[#D6D6D6] flex flex-row justify-between align-bottom px-2'>
-                <div className='flex flex-col items-baseline align-bottom'>
-                    <p className='text-[16px] font-[400] '>Price</p>
-                    <p className='text-[16px] font-[400] '>$ 87,19,000</p>
+            <div className='w-full border-b-[1px] border-[#D6D6D6] flex flex-row justify-between items-center px-2'>
+                <div className='flex flex-col'>
+                    <p className='text-[16px] font-[400]'>Price</p>
+                    <p className='text-[16px] font-[400]'>$ 7,19,500</p>
                 </div>
-                <div className='mt-4 cursor-pointer' onClick={toggleWishlist} >
+                <div className='mt-4 cursor-pointer' onClick={toggleWishlist}>
                     <svg
                         width="27"
                         height="27"
@@ -40,12 +41,11 @@ const ProductCards = ({ product }) => {
                     </svg>
                 </div>
             </div>
-            <div className=' w-full justify-center mx-auto my-4 px-10'>
-                <button className=' w-full rounded-md bg-[#006C54] text-white text-[20px] font-[400] '>Contact
-                </button>
+            <div className='w-full flex justify-center mx-auto my-4 px-10'>
+                <button className='w-full rounded-md bg-[#006C54] text-white text-[20px] font-[400]'>Contact</button>
             </div>
-        </div >
-    )
-}
+        </div>
+    );
+};
 
-export default ProductCards
+export default ProductCards;

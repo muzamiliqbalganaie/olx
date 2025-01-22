@@ -1,25 +1,13 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-/* 
-.bg-url {
-  background-image: url("/bg-head.jpg");
+
+/* .bg-greenoverlay {
+  background: linear-gradient(to top, #006C54 0%, #FFFFFF 100%);
 } */
 
-.bg-blackOverlay {
-  background-image: linear-gradient(
-    to bottom,
-   rgba(255, 255, 255, 1)0%
-    rgba(0, 108, 84, 1) 50%,
-    
-  );
-  background: linear-gradient(360deg, #006C54 0%, #FFFFFF 100%);
-
- 
-
-
-}
 .background-container {
+  background: linear-gradient(to top, rgba(0, 108, 84, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
   position: relative;
   max-width: 100%;
   height: 100%;
@@ -28,16 +16,15 @@
 
 .background-container::before {
   content: "";
-  background-image: url("/bg-head.svg"); /* Correct path without /public prefix */
+  background-image: url("../../public/bg-head.svg");
   background-size: cover;
   background-position: center;
-  /* opacity: 0.24; Set opacity to 24% */
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; 
+  z-index: -1;
 }
 
 .navbar {
@@ -120,4 +107,18 @@
 /* Remove scrollbar arrows */
 .custom-scrollbar::-webkit-scrollbar-button {
   display: none; /* Hide the arrows */
+}
+
+.u-search::-webkit-search-cancel-button { 
+  -webkit-appearance: none; appearance: none; 
+} 
+
+/*animations when doing pagination in the products page*/
+.fade-enter {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.fade-enter-active {
+  opacity: 1;
 }

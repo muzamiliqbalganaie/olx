@@ -1,9 +1,10 @@
 'use client';
-import { React, useState } from "react";
+import React, { useState } from "react";
 import LocationItem from "./locationitem";
 
 const locations = [
     {
+        id: 1,
         country: 'United States',
         flag: '🇺🇸',
         cities: [
@@ -15,6 +16,7 @@ const locations = [
         ]
     },
     {
+        id: 2,
         country: 'India',
         flag: '🇮🇳',
         cities: [
@@ -26,6 +28,7 @@ const locations = [
         ]
     },
     {
+        id: 3,
         country: 'United Kingdom',
         flag: '🇬🇧',
         cities: [
@@ -37,6 +40,7 @@ const locations = [
         ]
     },
     {
+        id: 4,
         country: 'Canada',
         flag: '🇨🇦',
         cities: [
@@ -48,6 +52,7 @@ const locations = [
         ]
     },
     {
+        id: 5,
         country: 'Australia',
         flag: '🇦🇺',
         cities: [
@@ -60,20 +65,29 @@ const locations = [
     }
 ];
 
-
 const LocationList = () => {
-    const [locDropOpen, setLocDropOpen] = useState(false);
+    const [openLocations, setOpenLocations] = useState(Array(locations.length).fill(false));
+
+    const handleMouseEnter = (index) => {
+        const newOpenLocations = openLocations.map((isOpen, i) => i === index);
+        setOpenLocations(newOpenLocations);
+    };
+
+    const handleMouseLeave = () => {
+        setOpenLocations(Array(locations.length).fill(false));
+    };
+
     return (
         <div className='w-full flex flex-col p-4 mx-auto border-[0.5px] border-[#D6D6D6DD]'>
             <p className='text-color2 text-[24px] font-[500]'>Locations</p>
             {locations.map((location, index) => (
                 <LocationItem
-                    key={index}
+                    key={location.id}
                     name={location.country}
                     cities={location.cities}
-                    flag={location.flag}
-                    locDropOpen={locDropOpen}
-                    setLocDropOpen={setLocDropOpen}
+                    isLocOpen={openLocations[index]}
+                    onMouseEnter={() => handleMouseEnter(index)}
+                    onMouseLeave={handleMouseLeave}
                 />
             ))}
         </div>

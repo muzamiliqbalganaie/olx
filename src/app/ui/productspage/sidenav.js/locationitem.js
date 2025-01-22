@@ -1,45 +1,46 @@
+'use client';
 import Image from 'next/image';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-const LocationItem = ({ name, cities, locDropOpen, setLocDropOpen, onFilterChange }) => {
-    const [selectedLoc, setSelectedLoc] = useState('');
-    const exploreOpen = locDropOpen;
+const LocationItem = ({ name, cities, isLocOpen, onMouseEnter, onMouseLeave }) => {
+    const [openCities, setOpenCities] = useState(Array(cities.length).fill(false));
 
-    const handleFilterChange = (event) => {
-        const value = event.target.value;
-        setSelectedLoc(value);
-        onFilterChange(value);
+    const handleCityMouseEnter = (index) => {
+        const newOpenCities = openCities.map((isOpen, i) => i === index);
+        setOpenCities(newOpenCities);
     };
+
+    const handleCityMouseLeave = () => {
+        setOpenCities(Array(cities.length).fill(false));
+    };
+
     return (
-        <div className="relative inline-block">
-            <div className='flex justify-start  items-center gap-1 whitespace-nowrap cursor-pointer px-2 my-1'
-                onMouseEnter={() => setLocDropOpen(!exploreOpen) && handleFilterChange()}
-                onMouseLeave={() => setLocDropOpen(false)}
-            >
+        <div className={`relative inline-block  ${isLocOpen ? 'h-auto' : 'h-8'}`}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}>
+            <div className={`flex justify-start items-center whitespace-nowrap cursor-pointer  rounded-[4px] px-2 my-1 ${isLocOpen ? 'py-2' : 'py-1'}`}>
                 <Image src="/productspage/countryflag.png" alt="country flag" width={24} height={16} />
                 <button
-                    className="text-custom1 select-none min-w-[80px] px-3 py-2 text-[24px] font-normal leading-[28.13px] text-left  underline-offset-auto"
+                    className="text-custom1 select-none min-w-[85px] px-3  text-[16px] font-[500] leading-[18.7spx] text-left underline-offset-auto"
                 >
                     {name}
                 </button>
             </div>
-            {locDropOpen && (
-                <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lgring-1 ring-black ring-opacity-5 bg-[#F1F2F6] "
-                >
-                    <div className="py-1"
-                    >
-                        {cities.map((city, index) => (
-                            <label key={index} className='text-[16px] font-[400] text-color2 pl-10 flex flex-row gap-1'>
-                                <input type='radio' name='city' value={city.name} />
+            {isLocOpen && (
+                <div className={`${isLocOpen ? 'max-h-full ' : 'h-auto'}`}>
+                    {cities.map((city, index) => (
+                        <div key={index} className={`relative bg-color5 ${isLocOpen ? 'max-h-full  ' : 'h-auto'}`}>
+                            <label className='text-[16px] font-[400] text-color4 pl-3 flex flex-row gap-1 p-2 items-center ,
+                            leading-[18.75px]'>
+                                <input type='checkbox' name='city' value={city.name} className='custom-checkbox' />
                                 {city.name}
                             </label>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
             )}
         </div>
-
-    )
-}
+    );
+};
 
 export default LocationItem;

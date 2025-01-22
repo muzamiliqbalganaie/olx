@@ -9,9 +9,9 @@ const ProductNavbar = () => {
     const [exploreOpen, setExploreOpen] = useState(false);
     const [dealsOpen, setDealsOpen] = useState(false);
     return (
-        <header className='fixed top-0 left-0 right-0 z-50  '>
-            <nav className="p-4  max-w-full bg-white">
-                <div className="container mx-auto flex justify-between  items-center max-w-[1680px]">
+        <header className=' top-0 left-0 right-0 z-50  '>
+            <nav className="p-4  max-w-full bg-white ">
+                <div className="container mx-auto flex justify-between  items-center w-full">
                     <div className="text-green-900 font-bold text-2xl">
                         <Image src={logo} alt="header logo" width={123} height={63} />
                     </div>
@@ -73,14 +73,10 @@ const ProductNavbar = () => {
                     </div>
                 </div>
             </nav>
-            <section className=' w-full background-container max-w-full h-fit-content'>
-                <div className='w-full flex flex-col items-center bg-blackOverlay mx-auto py-10'>
-                    <p className='text-3xl md:text-5xl font-extrabold w-full md:w-[762px] text-center mt-10 md:mt-20'>
-                        Sell Your Home & Unused Products Effortlessly on OLX
-                    </p>
-                    <p className='text-lg md:text-2xl w-full md:w-[470px] text-center my-5 md:my-10'>
-                        Declutter Your Space and Earn Extra Income by Selling Unused Items on OLX.
-                    </p>
+            <section className=' w-full background-container max-w-full h-fit-content bg-greenoverlay  '>
+                <div className='flex flex-col items-center max-w-full  bg-white bg-opacity-27 mx-auto py-10 mt-20 mb-20  justify-items-center'>
+                    <p className='text-[48px] font-[800] w-full px-[500px] mx-60 justify-center  text-center text-color2 leading-[56.25px] ' >Sell Your Home & Unused Products Effortlessly on OLX</p>
+                    <p className='text-[24px] w-[621.01px]  font-[400] text-center my-2 text-color2 leading-[28.13px]'>Declutter Your Space and Earn Extra Income by Selling Unused Items on OLX.</p>
                 </div>
             </section>
         </header>

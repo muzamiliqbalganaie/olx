@@ -1,7 +1,7 @@
+'use client';
 import { React, useState } from 'react';
-
 import FeaturedProductCard from './card';
-
+import '../../globals.css';
 const FreshRecomands = () => {
     const [carddata, setCardData] = useState([
         {
@@ -67,8 +67,12 @@ const FreshRecomands = () => {
     ]);
     return (
         <section className="flex flex-col max-w-full  ">
-            <p className="text-left text-[40px] font-[400] px-[3rem] pt-10 pb-6">Fresh Recommendations</p>
-            <div className='max-w-full grid grid-cols-3 gap-16'>
+            <div className="w-full bg-gradient-to-r from-fromColor to-toColor my-16">
+                <p className="text-left text-[40px] font-[400] leading-[48.8px] px-[3rem] py-16 ">
+                    Fresh Recommendations
+                </p>
+            </div>
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4'>
                 {
                     carddata.map((card) => (
                         <div key={card.id} className="flex justify-center flex-row items-center ">
@@ -76,7 +80,7 @@ const FreshRecomands = () => {
                                 id={card.id}
                                 title={card.title}
                                 description={card.description}
-                                picture={card.picture === null ? '/chair.svg' : card.picture}
+                                picture={card.picture === null ? '/TrackSuit.png' : card.picture}
                                 price={card.price}
                                 location={card.location}
                                 date={card.date}

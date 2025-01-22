@@ -5,10 +5,10 @@ import '../../../globals.css'
 
 const CategoryItem = ({ name, subcategories, isCatOpen, onMouseEnter, onMouseLeave, onSubCatSel }) => {
     const [openSubcategories, setOpenSubcategories] = useState(Array(subcategories.length).fill(false));
-    console.log('Subcategories:', subcategories);
-    useEffect(() => {
-        console.log('iscatopen:', isCatOpen);
-    }, [isCatOpen]);
+    // console.log('Subcategories:', subcategories);
+    // useEffect(() => {
+    //     console.log('iscatopen:', isCatOpen);
+    // }, [isCatOpen]);
     const handleSubcategoryMouseEnter = (index) => {
         const newOpenSubcategories = openSubcategories.map((isCatOpen, i) => i === index);
         setOpenSubcategories(newOpenSubcategories);
@@ -78,7 +78,7 @@ const CategoryItem = ({ name, subcategories, isCatOpen, onMouseEnter, onMouseLea
                                         <input type="checkbox" className="custom-checkbox" />
                                         <a
                                             href="#"
-                                            className="block  text-[14px] text-color2 font-[400]"
+                                            className="block text-[14px] text-color2 font-[400]"
                                             onClick={() => handleSubCategory(brand)}
                                         >
                                             {brand.name}
